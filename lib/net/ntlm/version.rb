@@ -5,7 +5,8 @@ module Net
       MAJOR = 0
       MINOR = 6
       TINY  = 3
-      STRING = [MAJOR, MINOR, TINY].join('.')
+      PATCH = 1
+      STRING = [MAJOR, MINOR, TINY, PATCH].join('.')
     end
   end
 end
