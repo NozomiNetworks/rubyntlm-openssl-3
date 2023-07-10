@@ -2,7 +2,7 @@ require File.join(File.dirname(__FILE__), 'lib', 'net', 'ntlm', 'version')
 
 Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
-  s.name = 'rubyntlm-openssl-3'
+  s.name = 'rubyntlm'
   s.version = Net::NTLM::VERSION::STRING
   s.summary = 'Ruby/NTLM library.'
   s.description = 'Ruby/NTLM provides message creator and parser for the NTLM authentication.'
