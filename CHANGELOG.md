@@ -1,4 +1,12 @@
 # Change Log
+## [v0.6.3.1](https://github.com/cloudvolumes/rubyntlm-openssl-3/tree/v0.6.3.1) (2023-08-21)
+
+[Full Changelog](https://github.com/cloudvolumes/rubyntlm-openssl-3/compare/v0.6.3...v0.6.3.1)
+
+**Merged pull requests:**
+
+- Update gem name & version [\#2](https://github.com/cloudvolumes/rubyntlm-openssl-3/pull/2) ([sukeerthiadiga](https://github.com/sukeerthiadiga))
+- Openssl 3 Support [\#1](https://github.com/cloudvolumes/rubyntlm-openssl-3/pull/1) ([sukeerthiadiga](https://github.com/sukeerthiadiga))
 
 ## [0.6.3](https://github.com/WinRb/rubyntlm/tree/0.6.3) (2021-01-26)
 [Full Changelog](https://github.com/WinRb/rubyntlm/compare/v0.6.2...0.6.3)
