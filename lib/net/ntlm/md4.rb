@@ -23,16 +23,13 @@ module NTLM
         # initial hash
         a, b, c, d = 0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476
 
+        string = string.b
         bit_len = string.size << 3
-        string += "\x80"
+        string << 0x80
         while (string.size % 64) != 56
-          string += "\0"
+          string << 0
         end
-        string = string.force_encoding('ascii-8bit') + [bit_len & mask, bit_len >> 32].pack("V2")
-
-        if string.size % 64 != 0
-          fail "failed to pad to correct length"
-        end
+        string += [bit_len & mask, bit_len >> 32].pack("V2")
 
         io = StringIO.new(string)
         block = ""
