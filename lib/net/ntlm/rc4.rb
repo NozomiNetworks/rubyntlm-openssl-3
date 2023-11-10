@@ -1,13 +1,5 @@
-require 'openssl'
-
 module Net
-module NTLM
-
-  begin
-    OpenSSL::Cipher.new("rc4")
-  rescue
-    # libssl-3.0+ doesn't support legacy Rc4 -> use our own implementation
-
+  module NTLM
     class Rc4
       def initialize(str)
         raise ArgumentError, "RC4: Key supplied is blank"  if str.eql?('')
@@ -41,19 +33,5 @@ module NTLM
         end
       end
     end
-
-  else
-    # Openssl/libssl provides RC4, so we can use it.
-    class Rc4
-      def initialize(str)
-        @ci = OpenSSL::Cipher.new("rc4")
-        @ci.key = str
-      end
-
-      def encrypt(text)
-        @ci.update(text) + @ci.final
-      end
-    end
   end
-end
 end

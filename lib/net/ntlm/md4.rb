@@ -1,17 +1,8 @@
-require 'openssl'
+require 'stringio'
 
 module Net
-module NTLM
-
-  class Md4
-
-    begin
-      OpenSSL::Digest::MD4.digest("")
-    rescue
-      # libssl-3.0+ doesn't support legacy MD4 -> use our own implementation
-
-      require 'stringio'
-
+  module NTLM
+    class Md4
       def self.digest(string)
         # functions
         mask = (1 << 32) - 1
@@ -65,13 +56,6 @@ module NTLM
 
         [a, b, c, d].pack("V4")
       end
-
-    else
-      # Openssl/libssl provides MD4, so we can use it.
-      def self.digest(string)
-        OpenSSL::Digest::MD4.digest(string)
-      end
     end
   end
-end
 end
